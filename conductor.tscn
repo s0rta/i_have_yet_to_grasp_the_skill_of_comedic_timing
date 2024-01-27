@@ -6,3 +6,5 @@
 
 [node name="Conductor" type="Node" parent="."]
 script = ExtResource("1_g84y0")
+
+[node name="StartTimer" type="Timer" parent="Conductor"]
