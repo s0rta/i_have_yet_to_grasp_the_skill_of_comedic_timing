@@ -88,6 +88,7 @@ _data = {
 script = ExtResource("1_1lwev")
 
 [node name="Conductor" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("1_3cjcw")
 script = ExtResource("1_g84y0")
 
@@ -108,4 +109,5 @@ libraries = {
 }
 
 [node name="Judge" type="Node2D" parent="."]
+unique_name_in_owner = true
 script = ExtResource("7_2kp4i")

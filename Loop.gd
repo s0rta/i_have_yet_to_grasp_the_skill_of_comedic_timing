@@ -1,13 +1,12 @@
 extends Node
 
-@onready var conductor = get_node("Conductor")
-@onready var judge = get_node("Judge")
+@onready var conductor = %Conductor
+@onready var judge = %Judge
 
 func _input(event):
-	print(event.keycode)
+	print(event.as_text)
 	if event is InputEventKey and event.keycode == 32:
 		judge.score_input(event)
-		# TODO CWS: debounce this
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
