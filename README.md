@@ -23,6 +23,6 @@
 
 - Conductor node
 - Input handler
-- Judge of whether it was Perfect, Good, Ok, Failure
-
+- Judge
+- Display layer
 
