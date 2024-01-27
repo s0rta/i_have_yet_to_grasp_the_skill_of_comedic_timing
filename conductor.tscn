@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ruiuhewx8lxy"]
+[gd_scene load_steps=18 format=3 uid="uid://ruiuhewx8lxy"]
 
 [ext_resource type="Script" path="res://Loop.gd" id="1_1lwev"]
 [ext_resource type="AudioStream" uid="uid://dasj10wst1dyj" path="res://robonome.ogg" id="1_3cjcw"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cp2agm2lytjo6" path="res://triangle-filled.png" id="4_2ofya"]
 [ext_resource type="Script" path="res://RhythmTrigger.gd" id="5_vgufy"]
 [ext_resource type="Script" path="res://Judge.gd" id="7_2kp4i"]
+[ext_resource type="Texture2D" uid="uid://cdp71aw1dt2x2" path="res://perfect.png" id="8_lnmkn"]
+[ext_resource type="Texture2D" uid="uid://d6pyc3fp072m" path="res://good.png" id="9_rd6ce"]
+[ext_resource type="Texture2D" uid="uid://cpxyedhc8eq0w" path="res://ok.png" id="10_6whel"]
+[ext_resource type="Texture2D" uid="uid://24s46xbgn5gs" path="res://miss.png" id="11_8a7mc"]
+[ext_resource type="Script" path="res://ScoreBoard.gd" id="12_sr4af"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gv7ti"]
 animations = [{
@@ -84,6 +89,26 @@ _data = {
 "basic_movement": SubResource("Animation_o1cb0")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_usip6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lnmkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rd6ce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6whel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8a7mc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1lwev")
 
@@ -111,3 +136,9 @@ libraries = {
 [node name="Judge" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_2kp4i")
+
+[node name="ScoreBoard" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(512, 320)
+sprite_frames = SubResource("SpriteFrames_usip6")
+script = ExtResource("12_sr4af")
