@@ -4,7 +4,7 @@ class_name Judge
 
 @onready var conductor = %Conductor
 # Measures how easy this judge is going to be on the player, on a scale of 0-1, with higher being easier 
-var permissiveness = 0.5 
+var permissiveness = 0.99 
 
 enum Score {
 	PERFECT,

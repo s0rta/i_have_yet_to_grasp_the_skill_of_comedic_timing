@@ -4,7 +4,7 @@ extends Node
 @onready var judge = %Judge
 
 func _input(event):
-	print(event.as_text)
+	print(event.as_text())
 	if event is InputEventKey and event.keycode == 32:
 		var score = judge.score_input(event)
 		%ScoreBoard.set_score_display(score)
