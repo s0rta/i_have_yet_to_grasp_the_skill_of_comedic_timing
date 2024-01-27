@@ -1,6 +1,6 @@
 extends Node
 
-@onready var conductor = get_node("conductor")
+@onready var conductor = get_node("Conductor")
 # Measures how easy this judge is going to be on the player, on a scale of 0-1, with higher being easier 
 var permissiveness = 0.5 
 

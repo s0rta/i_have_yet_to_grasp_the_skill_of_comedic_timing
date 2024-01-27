@@ -4,7 +4,8 @@ extends Node
 @onready var judge = get_node("Judge")
 
 func _input(event):
-	if event is InputEventKey and event.keycode == "space":
+	print(event.keycode)
+	if event is InputEventKey and event.keycode == 32:
 		judge.score_input(event)
 		# TODO CWS: debounce this
 
