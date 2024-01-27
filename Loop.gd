@@ -4,7 +4,9 @@ extends Node
 @onready var judge = get_node("Judge")
 
 func _input(event):
-	print(event.as_text())
+	if event is InputEventKey and event.keycode == "space":
+		judge.score_input(event)
+		# TODO CWS: debounce this
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
