@@ -4,9 +4,9 @@ extends Node
 @onready var judge = %Judge
 
 func _input(event):
-	print(event.as_text)
+	print(event.as_text())
 	if event is InputEventKey and event.keycode == 32:
-		judge.score_input(event)
+		print(judge.score_input(event))
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
