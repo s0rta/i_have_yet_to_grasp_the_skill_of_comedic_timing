@@ -20,7 +20,7 @@ func _process(delta):
 	pass
 
 func score_input(input):
-	var time_off_beat = conductor.time_off_beat()
+	var time_off_beat = conductor.get_time_off_beat()
 	return _score_time(time_off_beat)
 	
 func _score_time(time_off_beat):
