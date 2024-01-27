@@ -3,6 +3,8 @@ extends Node
 @onready var conductor = get_node("Conductor")
 @onready var judge = get_node("Judge")
 
+func _input(event):
+	print(event.as_text())
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

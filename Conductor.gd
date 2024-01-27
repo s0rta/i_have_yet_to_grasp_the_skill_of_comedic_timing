@@ -14,7 +14,7 @@ var measure = 1
 
 # determining how close to the beat user input is
 var closest = 0
-var time_off_beat = 0.0
+var time_off_beat = 0
 
 signal sig_beat(position)
 signal sig_measure(position)
@@ -50,8 +50,8 @@ func closest_beat(nth):
 	time_off_beat = abs(closest * sec_per_beat - song_position)
 	return Vector2(closest, time_off_beat)
 	
-func time_off_beat():
-	closest_beat = closest_beat(song_position_in_beats)
+func get_time_off_beat():
+	var closest_beat = closest_beat(song_position_in_beats)
 	return closest_beat[1]
 
 func play_from_beat(beat, offset):
