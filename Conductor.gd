@@ -1,6 +1,6 @@
 extends AudioStreamPlayer2D
 
-@export var bpm := 100
+@export var bpm := 120
 @export var measures := 4
 @export var beats_before_start := 0
 
@@ -49,6 +49,10 @@ func closest_beat(nth):
 	closest = int(round((song_position / sec_per_beat) / nth) * nth)
 	time_off_beat = abs(closest * sec_per_beat - song_position)
 	return Vector2(closest, time_off_beat)
+	
+func time_off_beat():
+	closest_beat = closest_beat(song_position_in_beats)
+	return closest_beat[1]
 
 func play_from_beat(beat, offset):
 	play()
