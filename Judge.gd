@@ -4,7 +4,8 @@ class_name Judge
 
 @onready var conductor = %Conductor
 # Measures how easy this judge is going to be on the player, on a scale of 0-1, with higher being easier 
-var permissiveness = 0.99 
+var permissiveness = 0.99
+var last_beat_for_input_received = 0
 
 enum Score {
 	PERFECT,
@@ -21,8 +22,18 @@ func _ready():
 func _process(delta):
 	pass
 
-func score_input(input) -> Score:
-	var time_off_beat = conductor.get_time_off_beat()
+func score_input(input):
+	# TODO CWS: this is not correctly ignoring input for beats already scored
+	var closest_beat_tuple = conductor.closest_beat()
+	var closest_beat = closest_beat_tuple[0]
+	var time_off_beat = closest_beat_tuple[1]
+	
+	if closest_beat == last_beat_for_input_received:
+		pass
+	
+	last_beat_for_input_received = closest_beat
+	print("Scoring beat ", closest_beat)
+	
 	return _score_time(time_off_beat)
 	
 func _score_time(time_off_beat) -> Score:

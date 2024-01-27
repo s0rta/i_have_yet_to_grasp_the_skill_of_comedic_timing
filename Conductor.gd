@@ -45,14 +45,10 @@ func play_with_beat_offset(n):
 	$StartTimer.wait_time = sec_per_beat
 	$StartTimer.start()
 
-func closest_beat(nth):
-	closest = int(round((song_position / sec_per_beat) / nth) * nth)
+func closest_beat():
+	closest = int(round((song_position / sec_per_beat)))
 	time_off_beat = abs(closest * sec_per_beat - song_position)
 	return Vector2(closest, time_off_beat)
-	
-func get_time_off_beat():
-	var closest_beat = closest_beat(song_position_in_beats)
-	return closest_beat[1]
 
 func play_from_beat(beat, offset):
 	play()
