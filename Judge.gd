@@ -21,7 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
+ 
 func score_input(input):
 	# TODO CWS: this is not correctly ignoring input for beats already scored
 	var closest_beat_tuple = conductor.closest_beat()
@@ -29,15 +29,17 @@ func score_input(input):
 	var time_off_beat = closest_beat_tuple[1]
 	
 	if closest_beat == last_beat_for_input_received:
-		pass
+		return
 	
 	last_beat_for_input_received = closest_beat
 	print("Scoring beat ", closest_beat)
+	print("Last beat", last_beat_for_input_received)
 	
 	return _score_time(time_off_beat)
 	
 func _score_time(time_off_beat) -> Score:
 	var percent_off = time_off_beat / conductor.sec_per_beat
+	print("Percent off:", percent_off)
 	var weighted_percent_off = pow(percent_off, permissiveness)
 	if weighted_percent_off < 0.1:
 		return Score.PERFECT

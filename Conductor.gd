@@ -48,6 +48,9 @@ func play_with_beat_offset(n):
 func closest_beat():
 	closest = int(round((song_position / sec_per_beat)))
 	time_off_beat = abs(closest * sec_per_beat - song_position)
+	if closest == 0:
+		closest = 4 # Because this is a loop
+
 	return Vector2(closest, time_off_beat)
 
 func play_from_beat(beat, offset):
