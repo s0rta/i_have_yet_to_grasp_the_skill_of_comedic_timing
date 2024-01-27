@@ -54,6 +54,7 @@ func closest_beat():
 	return Vector2(closest, time_off_beat)
 
 func play_from_beat(beat, offset):
+	pitch_scale = 0.5 / sec_per_beat
 	play()
 	seek(beat * sec_per_beat)
 	beats_before_start = offset
