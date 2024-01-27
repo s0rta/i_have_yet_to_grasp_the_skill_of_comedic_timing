@@ -22,7 +22,7 @@ signal sig_measure(position)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sec_per_beat = 60.0 / bpm
-	pass # Replace with function body.
+	play_from_beat(0, 0)
 
 func _physics_process(_delta):
 	if playing:

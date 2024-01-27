@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="i_have_yet_to_grasp_the_skill_of_comedic_timing"
+run/main_scene="res://conductor.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
