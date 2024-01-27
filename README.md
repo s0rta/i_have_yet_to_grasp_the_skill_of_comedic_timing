@@ -6,3 +6,23 @@
 - laying out the games in the godot scene
 - how should score be kept?
 - a big lever
+
+
+## Inspriration
+
+- Rhythm Mania
+
+## Assets needed
+
+- Click track
+- Slightly different click for the player sounds
+- 2 robot characters
+- Big Lever
+
+## Components of the game
+
+- Conductor node
+- Input handler
+- Judge of whether it was Perfect, Good, Ok, Failure
+
+
