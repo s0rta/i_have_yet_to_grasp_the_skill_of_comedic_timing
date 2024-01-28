@@ -5,7 +5,6 @@ class_name Goal
 var key_sequence: Array
 
 func _init(initial_key_sequence):
-	print("in init", initial_key_sequence)
 	key_sequence = initial_key_sequence
 
 # Called when the node enters the scene tree for the first time.
