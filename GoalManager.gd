@@ -13,7 +13,7 @@ func _init():
 func get_current_goal():
 	print("GET CURRENT GOAL")
 	if not _current_goal or _current_goal.key_sequence.is_empty():
-		_current_goal = generate_goal()  
+		_current_goal = generate_goal()
 	
 	print("_current_goal", _current_goal.key_sequence)
 	

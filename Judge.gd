@@ -39,7 +39,7 @@ func score_input(input, current_goal: Goal):
 	
 	if not target_keycode:
 		return Score.NA
-	elif input.key_code != target_keycode:
+	elif input.keycode != target_keycode:
 		return Score.MISS
 	
 	print("Scoring beat ", closest_beat, target_keycode)
