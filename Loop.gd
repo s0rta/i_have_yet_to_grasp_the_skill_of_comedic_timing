@@ -7,6 +7,7 @@ func _input(event):
 	if event is InputEventKey and event.keycode == 32:
 		var score = judge.score_input(event)
 		%ScoreBoard.set_score_display(score)
+		%Scantron.set_scanton_display(score)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
