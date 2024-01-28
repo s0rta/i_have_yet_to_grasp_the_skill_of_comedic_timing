@@ -11,7 +11,8 @@ enum Score {
 	PERFECT,
 	GOOD,
 	OK,
-	MISS
+	MISS,
+	NA
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -21,9 +22,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
- 
-func score_input(input):
-	# TODO CWS: this is not correctly ignoring input for beats already scored
+
+func score_input(input, current_goal: Goal):
 	var closest_beat_tuple = conductor.closest_beat()
 	var closest_beat = closest_beat_tuple[0]
 	var time_off_beat = closest_beat_tuple[1]
@@ -32,7 +32,17 @@ func score_input(input):
 		return
 	
 	last_beat_for_input_received = closest_beat
-	print("Scoring beat ", closest_beat)
+	
+	print("Current goal", current_goal.key_sequence)
+	
+	var target_keycode = current_goal.key_sequence[closest_beat - 1]
+	
+	if not target_keycode:
+		return Score.NA
+	elif input.key_code != target_keycode:
+		return Score.MISS
+	
+	print("Scoring beat ", closest_beat, target_keycode)
 	print("Last beat", last_beat_for_input_received)
 	
 	return _score_time(time_off_beat)

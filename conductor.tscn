@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ruiuhewx8lxy"]
+[gd_scene load_steps=19 format=3 uid="uid://ruiuhewx8lxy"]
 
 [ext_resource type="Script" path="res://Loop.gd" id="1_1lwev"]
 [ext_resource type="AudioStream" uid="uid://dasj10wst1dyj" path="res://robonome.ogg" id="1_3cjcw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cp2agm2lytjo6" path="res://triangle-filled.png" id="4_2ofya"]
 [ext_resource type="Script" path="res://RhythmTrigger.gd" id="5_vgufy"]
 [ext_resource type="Script" path="res://Judge.gd" id="7_2kp4i"]
+[ext_resource type="Script" path="res://GoalManager.gd" id="7_pmv8e"]
 [ext_resource type="Texture2D" uid="uid://cdp71aw1dt2x2" path="res://perfect.png" id="8_lnmkn"]
 [ext_resource type="Texture2D" uid="uid://d6pyc3fp072m" path="res://good.png" id="9_rd6ce"]
 [ext_resource type="Texture2D" uid="uid://cpxyedhc8eq0w" path="res://ok.png" id="10_6whel"]
@@ -132,6 +133,10 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_yuapc")
 }
+
+[node name="GoalManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_pmv8e")
 
 [node name="Judge" type="Node2D" parent="."]
 unique_name_in_owner = true
