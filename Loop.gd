@@ -8,6 +8,7 @@ func _input(event):
 		var score = judge.score_input(event)
 		%ScoreBoard.set_score_display(score)
 		%Scantron.set_scanton_display(score)
+		%Blorgo.set_blorgo_display(score)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

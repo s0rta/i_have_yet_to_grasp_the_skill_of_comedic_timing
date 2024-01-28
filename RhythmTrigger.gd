@@ -3,12 +3,14 @@ extends AnimatedSprite2D
 @onready var _rhythm_trigger = %RhythmTrigger
 @onready var _animation_player = %AnimationPlayer
 @onready var _scantron_bounce = %ScantronBounce
+@onready var _blorgo_bounce = %BlorgoBounce
 @onready var _conductor = %Conductor
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_animation_player.play("basic_movement", -1, 0.5 / _conductor.sec_per_beat)
 	_scantron_bounce.play("bounce", -1, 0.5 / _conductor.sec_per_beat)
+	_blorgo_bounce.play("blorgo_bounce", -1, 0.5 / _conductor.sec_per_beat)
 	pass # Replace with function body.
 
 
