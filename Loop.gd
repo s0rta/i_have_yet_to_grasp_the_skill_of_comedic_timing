@@ -8,6 +8,8 @@ func _input(event):
 		var current_goal = goal_manager.get_current_goal()
 		var score = judge.score_input(event, current_goal)
 		%ScoreBoard.set_score_display(score)
+		%Scantron.set_scanton_display(score)
+		%Blorgo.set_blorgo_display(score)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
