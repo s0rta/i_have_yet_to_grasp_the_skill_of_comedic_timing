@@ -1,7 +1,7 @@
 extends AudioStreamPlayer2D
 
 @export var bpm := 120
-@export var measures := 4
+@export var measures := 4 # TODO CWS: should this be beats per measure?
 @export var beats_before_start := 0
 
 # tracking the beat and song pos
@@ -10,7 +10,8 @@ var song_position_in_beats = 1
 var sec_per_beat = 60.0 / bpm
 var last_reported_beat = 0
 
-var measure = 1
+# TODO CWS: should this be beat_in_measure?
+var measure: int = 1
 
 # determining how close to the beat user input is
 var closest = 0
@@ -45,7 +46,7 @@ func play_with_beat_offset(n):
 	$StartTimer.wait_time = sec_per_beat
 	$StartTimer.start()
 
-func closest_beat():
+func closest_beat() -> Vector2:
 	closest = int(round((song_position / sec_per_beat)))
 	time_off_beat = abs(closest * sec_per_beat - song_position)
 	if closest == 0:

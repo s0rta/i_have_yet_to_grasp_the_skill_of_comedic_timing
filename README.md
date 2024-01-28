@@ -1,28 +1,24 @@
 # Things we need
-- Display the prepetual metronome of the game so users can keep on beat
 - 3 micro rhythm games to be notated as the kinds of jokes at play
   - a sound for each games' notes to make
 - the ability to generate the rhythm games based on a seed
 - laying out the games in the godot scene
 - how should score be kept?
-- a big lever
-
 
 ## Inspriration
 
-- Rhythm Mania
+- Rhythm Heaven Fever
 
 ## Assets needed
 
-- Click track
 - Slightly different click for the player sounds
-- 2 robot characters
 - Big Lever
+- Miss sound
 
-## Components of the game
+## Next steps
 
-- Conductor node
-- Input handler
-- Judge
-- Display layer
+- Animate robots with 3 states (Perfect, OK/Good, Miss)
+- Bop it functionality (robots call out keys or shapes, shapes are responded to on the next beat)
+  - Call out generates a Goal that is a tuple of a beat and a button
+
 
