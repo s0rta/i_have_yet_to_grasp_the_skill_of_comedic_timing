@@ -33,8 +33,6 @@ func score_input(input, current_goal: Goal):
 	
 	last_beat_for_input_received = closest_beat
 	
-	print("Current goal", current_goal.key_sequence)
-	
 	var target_keycode = current_goal.key_sequence[closest_beat - 1]
 	
 	if not target_keycode:
@@ -42,14 +40,10 @@ func score_input(input, current_goal: Goal):
 	elif input.keycode != target_keycode:
 		return Score.MISS
 	
-	print("Scoring beat ", closest_beat, target_keycode)
-	print("Last beat", last_beat_for_input_received)
-	
 	return _score_time(time_off_beat)
 	
 func _score_time(time_off_beat) -> Score:
 	var percent_off = time_off_beat / conductor.sec_per_beat
-	print("Percent off:", percent_off)
 	var weighted_percent_off = pow(percent_off, permissiveness)
 	if weighted_percent_off < 0.1:
 		return Score.PERFECT

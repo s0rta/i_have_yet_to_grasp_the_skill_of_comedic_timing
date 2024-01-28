@@ -11,19 +11,15 @@ func _init():
 	possible_keys = {}
 
 func get_current_goal():
-	print("GET CURRENT GOAL")
 	if not _current_goal or _current_goal.key_sequence.is_empty():
 		_current_goal = generate_goal()
-	
-	print("_current_goal", _current_goal.key_sequence)
 	
 	var goal = _current_goal
 	
 	# if we're on the last beat of the measure, generate a new current_goal
 	if conductor.closest_beat()[0] == 4:
 		_current_goal = generate_goal()
-		
-	print("goal sequence", goal.key_sequence)
+	
 	return goal
 
 func generate_goal() -> Goal:
